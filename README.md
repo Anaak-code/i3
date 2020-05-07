@@ -1,29 +1,33 @@
 ## Bem-vindo! ao meu Github
 
-### Como Configurar o i3-gaps
-Para Configurar o i3-gaps Você deve Seguir alguns passos.
+## Você vai precisa ter o github, caso não tenha abra um terminal e  digite:
+# Para Sistema Linux/Debian/Ubuntu
+sudo apt-get install git
+# Para Sistema Linux/Arch/Manjaro
+yay -S pacman git
+# Caso não tenha o yay digite pacman.
+sudo pacman -S git
+# Depois de Instalado o git, continue o tutorial ->
+### Como Configurar o i3-gaps:
+Para Configurar o i3-gaps Você deve Seguir alguns passos:
 ```markdown
-# 1 - é preciso clonar o git do polybar-themes.
-## 2 -é preciso clonar o git terro fonts só digitar no google, github terro fonts
-### Header 3
+# 1 - é preciso clonar o git do polybar-themes. digite github polybar-themes.
+# 2 - é preciso clonar o git terro fonts, só escrever no google github terroo fonts.
+# se você for coloca as fontes apenas para um usuário ->
+cp fonts/ .local/share/fonts/
+# caso você queira copiar para todos usuários ->
+cp fonts/ /usr/share/fonts/
+# Depois de ter copiado a pasta fonts para qualquer um dos diretório, é preciso atualizar o cache. -> fc-cache -fv
 
-- Bulleted
-- List
+# agora é só entrar no diretório clonado, no caso foi o polybar-themes. depois de estar nele escolha um Polybar do seu agrado. agora Você entra na pasta do polybar, copie tudo que está dentro dela para o diretório cp -r * ~/.config/polybar/
 
-1. Numbered
-2. List
+# Depois disso basta entra na pasta ~/.config/polybar/ e da executa o launch.sh
 
-**Bold** and _Italic_ and `Code` text
+# Caso Você queira que ele sempre inicie o sistema com o Polybar, abre o arquivo sudo vim ~/.config/i3/config
+# agora digite em qualquer linha o seguinte comando -> exec_always --no-startup-id ~/.config/polybar/launch.sh
+# Com isso toda vez que vc reiniciar o sistema ele vai fica com o polybar.
 
-[Link](url) and ![Image](src)
-```
+# Lembrando pessoal, eu não mostrei como instalar o Polybar, pois muitos que vem procurar customização de i3-gaps ja tem o Polybar não é mesmo.
+# espero ter ajudado alguém.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Anaak-code/i3/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Grupo do Discord -> https://discord.gg/FAA4qW2 comunidade de Programadores.
