@@ -11,8 +11,8 @@ sudo pacman -S git
 ### Customizando o polybar:
 Para Customizar o Polybar, Você deve Seguir alguns passos:
 
- # 1 - é preciso clonar o git do polybar-themes. digite github polybar-themes.
- # 2 - é preciso clonar o git terro fonts, só escrever no google github terroo fonts.
+ # 1 - é preciso clonar o git do polybar-themes. digite github polybar-themes no google.
+ # 2 - é preciso clonar o git terroo fonts, só escrever no google github terroo fonts.
  se você for coloca as fontes apenas para um usuário ->
 cp fonts/ .local/share/fonts/
  caso você queira copiar para todos usuários ->
