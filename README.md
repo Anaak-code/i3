@@ -11,8 +11,8 @@ sudo pacman -S git
 ### Customizando o polybar:
 Para Customizar o Polybar, Você deve Seguir alguns passos:
 
- 1 - é preciso clonar o git do polybar-themes. digite github polybar-themes.
- 2 - é preciso clonar o git terro fonts, só escrever no google github terroo fonts.
+ # 1 - é preciso clonar o git do polybar-themes. digite github polybar-themes.
+ # 2 - é preciso clonar o git terro fonts, só escrever no google github terroo fonts.
  se você for coloca as fontes apenas para um usuário ->
 cp fonts/ .local/share/fonts/
  caso você queira copiar para todos usuários ->
@@ -27,7 +27,6 @@ Caso Você queira que ele sempre inicie o sistema com o Polybar, abre o arquivo 
 agora digite em qualquer linha o seguinte comando -> exec_always --no-startup-id ~/.config/polybar/launch.sh
  Com isso toda vez que vc reiniciar o sistema ele vai fica com o polybar.
 
-# Lembrando pessoal, eu não mostrei como instalar o Polybar, pois quem vem procurar customização de polybar, ja tem o Polybar não é mesmo.
 # espero ter ajudado alguém.
 
-Grupo do Discord -> https://discord.gg/FAA4qW2 Comunidade de Programadores.
+# Grupo do Discord -> https://discord.gg/FAA4qW2 Comunidade de Programadores.
