@@ -1,18 +1,10 @@
-## Welcome to GitHub Pages
+## Bem-vindo! ao meu Github
 
-You can use the [editor on GitHub](https://github.com/Anaak-code/i3/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+### Como Configurar o i3-gaps
+Para Configurar o i3-gaps Você deve Seguir alguns passos.
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
+# 1 - é preciso clonar o git do polybar-themes.
+## 2 -é preciso clonar o git terro fonts só digitar no google, github terro fonts
 ### Header 3
 
 - Bulleted
