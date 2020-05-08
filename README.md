@@ -1,5 +1,5 @@
 ## Bem-vindo! ao meu Github
-# Resultado final  sem o ncmpcpp ->
+# Resultado final ->
 ![Screenshot from 2020-05-07 21-12-10](https://user-images.githubusercontent.com/64982678/81356422-8693e900-90a7-11ea-862f-807453d4e11b.png)
 
 # Clonando o Repositório git clone https://github.com/Anaak-code/i3.git depois de clonar o meu repositório siga os passos abaixo.
