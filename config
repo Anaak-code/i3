@@ -1,83 +1,103 @@
-# Modkey Padrao
-set $mod mod4
+set $mod Mod4
 
-#oculta barra de titulo
-new_window pixel
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Droid Sans 10
 
-# i3-gaps
-gaps inner 6
-# fonte para titulos de janela
-font pango: SpaceMono Nerd Font Mono Medium 11
 
-# iniciar o terminal
-bindsym $mod+Return exec termite
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:Droid Sans 10
 
-# Matar Janela focada
-bindsym $mod+shift+q kill
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
 
-# Iniciar Rofi
-bindsym $mod+d exec rofi -show drun -columns 3
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
-# Move Entre Janelas
+# start a terminal
+bindsym $mod+Return exec xterm
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+
+# start rofi (dmenu mode)
+bindsym $mod+z exec rofi -theme themes/app-launcher -show drun
+
+# start rofi (window mode)
+bindsym $mod+Tab exec exec rofi -theme themes/app-launcher -show window
+
+# change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+odiaeresis focus right
 
-#Alternativa, vc pode usar as teclas do cursor:
+# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-#Mover Janela focada
+# move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+odiaeresis move right
 
-#Fullscreen Tela Cheia
-bindsym $modkey+f fullscreen toggle
-
-#Como Alternativa, Vc pode usar as teclas do cursor:
+# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-#Dividr na orientation horizontal
+# split in horizontal orientation
 bindsym $mod+h split h
 
-#Dividr na orientation vertical
+# split in vertical orientation
 bindsym $mod+v split v
 
-#Entre no modo de tela cheia para o conteiner focado
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+# global fullscreen: across all monitors
+bindsym $mod+shift+f        fullscreen toggle global
 
-#Alternar lado a lado / flutuante
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-#Alternar o foco entre janelas lado a lado / flutuantes
+# change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-#Focalize o conteiner pai
+# focus the parent container
 bindsym $mod+a focus parent
 
-#nomeie os espacos de trabalho
-set $workspace1 "1"
-set $workspace2 "2"
-set $workspace3 "3"
-set $workspace4 "4"
-set $workspace5 "5"
-set $workspace6 "6"
-set $workspace7 "7"
-set $workspace8 "8"
-set $workspace9 "9"
-set $workspace10 "10"
+# focus the child container
+#bindsym $mod+d focus child
 
-#Alternar para o espaco de trabalho
+set $workspace1 "1:"
+set $workspace2 "2:"
+set $workspace3 "3:"
+set $workspace4 "4:"
+set $workspace5 "5:"
+set $workspace6 "6:"
+set $workspace7 "7:"
+set $workspace8 "8:"
+set $workspace9 "9:"
+set $workspace10 "10:"
+
+# switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
@@ -87,9 +107,9 @@ bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace0
+bindsym $mod+0 workspace $workspace10
 
-#Mover workspace para outro workspace.
+# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
@@ -99,85 +119,182 @@ bindsym $mod+Shift+6 move container to workspace $workspace6
 bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace0
+bindsym $mod+Shift+0 move container to workspace $workspace10
 
-# Sempre abre alguns programas no espaco de trabalho especificado
-assign [class="firefox"] $workspace1
-assign [class="emacs"] $workspace2
-assign [class="VirtualBox"] workspace5
-assign [class="spotify"] $workspace8
-assign [class="cmus"] $workspace8
+# open applications on specific workspaces
+assign [class="Chromium"] $workspace1
+assign [class="Google-chrome"] $workspace1
+assign [class="Firefox"] $workspace1
+assign [class="qutebrowser"] $workspace1
+assign [class="Nautilus"] $workspace3
+assign [class="Pcmanfm"] $workspace3
+assign [class="Thunar"] $workspace3
+assign [class="Thunderbird"] $workspace7
+assign [class="Spotify"] $workspace10
+for_window [class="Spotify"] move to workspace $workspace10 
+assign [class="Rhythmbox"] $workspace4
+assign [class="Audacious"] $workspace4
+assign [class="Gnome-mplayer"] $workspace5
+assign [class="Vlc"] $workspace5
+assign [class="Totem"] $workspace5
+#assign [class="MPlayer"] $workspace5
+#assign [class="mpv"] $workspace5
+assign [class="Steam"] $workspace6
+assign [class="Gimp"] $workspace8
+assign [class="Photoshop.exe"] $workspace8
+assign [class="Gthumb"] $workspace8
 
-#Ativar flutuacao para algumas janelas
-for_window [class="^Pavucontrol$"] floating enable
-for_window [class="^Arandr$"] floating enable
-for_window [class="^Steam$" title="^Friends List$"] floating enable
-for_window [class="^Steam - News"] floating enable
-for_window [class=".* - Chat"] floating enable
-for_window [class="^Settins$"] floating enable
-for_window [class=".* - event started"] floating enable
-for_window [class=".* CD key"] floating enable
-for_window [class="^Steam - Self Updater$"] floating enable
-for_window [class="Screenshot Uploader$"] floating enable
-for_window [class="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [class="^Steam Keyboard$"] floating enable
-
-
-# Recarregue o arquivo de configuracao
+# reload the configuration file
 bindsym $mod+Shift+c reload
-
-# Reinicie o i3 (preserva seu layout / sessao, pode ser usado para atualizar o i3 )
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec ./config/i3/scripts/i3-exit
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-#Tela de Bloqueio Personalizada do Betterlockscreen, se vc n tiver baixe ela pelo github
-bindsym $mod+Shift+x exec betterlockscreen -l dim -t "Bebe do Lucas"
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
 
-#Saia do i3 efetua o logout dasua sessao X
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'se vc quer encerrar a section do i3, aperte no yes, se nao exit.? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
 
-# Rendimensionar janela vc tambem pode usar o mouse para fazer isso
-mode "resize"
-{
-  # Rendimensione com as teclas de seta
-  bindsym Left resize shrink width 2 px or 2 ppt
-  bindsym Down resize grow height 2 px or 2 ppt
-  bindsym Up resize shrink height 2 px or 2 ppt
-  bindsym Right resize grow width 2 px or 2 ppt
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
-  # Voltar ao norma: entrar ou escapar
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
+
 bindsym $mod+r mode "resize"
 
-# Definindo cores
-set $bg #1a181c
-set $lg #1a181c
-set $fg #1a181c
-set $cyan #1a181c
-set $green #1a181c
-set $magenta #1a181c
-set $comment #1a181c
-set $purple #1a181c
+# Manually set colors
+# define colors used
+#set $bg-color 	         #2f343f
+#set $inactive-bg-color   #2f343f
+#set $text-color          #f3f4f5
+#set $inactive-text-color #676E7D
+#set $urgent-bg-color     #5294e2
 
-# Defina algumas boas cores no indicador de texto de fundo da borda
-client.focused $comment $comment $fg $comment
-client.unfocused $bg $bg $cyan $cyan
-client.focused_inactive $bg $bg $green $green
-client.urgent $bg $bg $magenta $magenta
-client.placeholder $bg $bg $cyan $cyan
+#client.focused          #676E7D #676E7D #FFFFFF #676E7D
+#client.focused_inactive #2f343f #2f343f #FFFFFF #2f343f
+#client.unfocused        #2f343f #2f343f #FFFFFF #2f343f
+#client.urgent           #2f343f #2f343f #ffffff #2f343f
+#client.placeholder      #2f343f #2f343f #ffffff #2f343f
 
-# descomente essas 4 linhas a baixo para usar a barra i3status.
-#bar
-#{
-#  status_command i3status
-#}
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
 
-# Inicializar Alguns Programas
+# class                 border  backgr. text indicator child_border
+client.focused          $fg     $fg     $fg  $fg       $fg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
+# PROTIP: You can also dynamically set dmenu's colors this way:
+#bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+
+# windows starting in floating mode
+for_window [instance="origin.exe"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+#for_window [class="Spotify"] floating enable
+for_window [class="Transmission"] floating enable 
+for_window [class="Lxappearance"] floating enable 
+for_window [class="Xfce4-taskmanager"] floating enable 
+for_window [class="Gnome-system-monitor"] floating enable 
+for_window [class="Simplescreenrecorder"] floating enable 
+for_window [class="Xsensors"] floating enable
+for_window [class="Nitrogen"] floating enable
+#for_window [class="Mainwindow.py"] floating enable 
+for_window [class="etcher"] floating enable 
+for_window [class="Galculator"] floating enable 
+for_window [class="Audacious"] floating enable 
+for_window [class="Nautilus"] floating enable
+for_window [class="Thunar"] floating enable
+for_window [class="Org.gnome.Weather.Application"] floating enable
+#for_window [class="Photoshop.exe"] floating enable 
+for_window [class="(?i)virtualbox"] floating enable 
+for_window [class="milkytracker"] floating enable
+for_window [class="Arandr"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="minergate"] floating enable 
+for_window [class="Xarchiver"] floating enable
+for_window [class="Gzdoom"] floating enable 
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="Pavucontrol"] floating enable
+for_window [class="FS-UAE Launcher 2.8.3 (Not logged in)"] floating enable
+for_window [class="Nm-connection-editor"] floating enable 
+for_window [class="MPlayer"] floating enable
+for_window [class="mpv"] floating enable
+for_window [class="Blueman-manager"] floating enable 
+for_window [title="dosbox"] floating enable
+for_window [class="Nvidia-settings"] floating enable
+#for_window [class="cool-retro-term"] resize set 600 740
+
+# volume control
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# media player controls
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPause exec mpc pause
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+
+# screenshot
+bindsym Print exec scrot $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Mod1+Print exec scrot -u $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Mod1+Shift+Print exec scrot -s $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+
+# window style
+new_window pixel 1
+new_float normal 1
+hide_edge_borders none
+
+# i3 gaps
+for_window [class="^.*"] border pixel 1
+gaps inner 20
+gaps outer 2
+#smart_gaps on
+#smart_borders on
+
+# shut down, restart and locking features
+bindsym $mod+Delete exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.sh -show system -theme themes/system-menu
+bindsym $mod+shift+Delete exec betterlockscreen -l
+
+# screensetup
+exec_always --no-startup-id xrandr --output DisplayPort-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-0 --off --output DVI-1 --off
+
+# autostarted applications
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id compton --config ~/.config/compton.conf
+exec --no-startup-id setbg	
+#exec --no-startup-id feh --bg-scale ~/.Wallpaper.*
+exec --no-startup-id compton --config ~/.config/compton.conf -b
 #exec --no-startup-id .config/conky/start_conky
 exec --no-startup-id xset dpms 500
+exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l dim"
+exec --no-startup-id dunstwal
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id mpd
+exec --no-startup-id setxkbmap se
 exec_always --no-startup-id wal -R -n
-exec $HOME/.fehbg
