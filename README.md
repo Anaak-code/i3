@@ -15,10 +15,10 @@ Depois disso reinicie seu i3 Mod + Shift + r
 # Scripts -> tty-clock e ncmpcpp. tty-clock apenas pode ser clonado ou usando o yay ou trizen no arch, ja o ncmpcpp pode baixar atraves do repositorio padrao, usando tanto pacman quanto apt-get install ncmpcpp.
 ```Markdown
 # Instalando ncmpcpp ->
-<h1>sudo apt-get install ncmpcpp</h1>
-<h2> sudo apt-get install mpd</h2>
-<h2>sudo pacman -S ncmpcpp</h2>
-<h2> sudo pacman -S mpd </h2>
+sudo apt-get install ncmpcpp
+sudo apt-get install mpd
+sudo pacman -S ncmpcpp
+sudo pacman -S mpd 
 mpd é um servidor de reprodução de música.
 
 <h3>criando a pasta do ncmpcpp e mpd e configurando</h3>
