@@ -94,7 +94,7 @@ Para Customizar o Polybar, Você deve Seguir alguns passos:
 
  # 1 - é preciso clonar o git do polybar-themes. digite github polybar-themes no google.
  # 2 - é preciso clonar o git terroo fonts, só escrever no google github terroo fonts.
-se você for coloca as fontes apenas para um usuário ->
+se você for colocar as fontes apenas para um usuário ->
 ```Markdown
 cp fonts/ .local/share/fonts/
  caso você queira copiar para todos usuários ->
