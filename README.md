@@ -1,6 +1,6 @@
 ## Bem-vindo! ao meu Github
 # Resultado final ->
-![Screenshot from 2020-05-07 21-12-10](https://user-images.githubusercontent.com/64982678/81356422-8693e900-90a7-11ea-862f-807453d4e11b.png)
+![wallpaper](https://user-images.githubusercontent.com/64982678/81476946-2b6b0f00-91eb-11ea-94a5-14d565ae3d19.png)
 
 # Clonando o Repositório git clone https://github.com/Anaak-code/i3.git depois de clonar o meu repositório siga os passos abaixo.
 # Depois de ter clonado entre na pasta i3 e dps copie o arquivo config para o ~/.config/i3/config
@@ -40,7 +40,8 @@ music_directory "/root/Music"
 playlist_directory "/root/Music"
 depois de fazer isso tudo, salve e saia agora da mpd no terminal, depois de da mpd execute o comando ncmpcpp, e sua imagem deve está igual a minha ->
 ```
-![Screenshot from 2020-05-07 21-45-40](https://user-images.githubusercontent.com/64982678/81358197-353a2880-90ac-11ea-8605-5f2caf9147d8.png)
+![Screenshot from 2020-05-09 11-50-12](https://user-images.githubusercontent.com/64982678/81477009-6a996000-91eb-11ea-8a1d-02b7012a60b3.png)
+
 <h3> com as teclas 1 2 3 4 5 6 7 8 vc navega pelo ncmpcpp.</h3>
 <h3> na tecla 2 fica suas músicas, a tecla 1 é onde sua playlist está e as outras teclas vc vão vendo.</h3>
 <h3> caso você não coloco correto o diretório da sua pasta de playlist de músicas não vai aparecer nenhuma música.</h3>
