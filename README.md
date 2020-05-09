@@ -81,7 +81,7 @@ agora entre no arquivo nano ~/.config/compton.conf e caso vcs nao queira instala
 agora para executar digite -> compton --config ./config/compton.conf
 
 ```
-## Você vai precisa ter o github, caso não tenha abra um terminal e  digite:
+## Você vai precisa ter o git, caso não tenha abra um terminal e  digite:
 # Para Sistema Linux/Debian/Ubuntu
 sudo apt-get install git
 # Para Sistema Linux/Arch/Manjaro
